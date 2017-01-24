@@ -1,5 +1,5 @@
-<ul>
-  <li *ngFor="let item of list">
-    {{item.item}}
+<ul *ngIf="list.length > 2">
+  <li *ngFor="let item of list" id={{item.id}}>
+    <p>{{item.item}}<p>
   </li>
 </ul>
