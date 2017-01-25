@@ -5,7 +5,7 @@ import Item from './dataModels/item'
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  outputs: ['list', 'addItem', 'deleteItem']
+  outputs: ['list', 'addItem', 'deleteItem', 'changeQuality']
 })
 
 export class AppComponent {
@@ -35,6 +35,14 @@ export class AppComponent {
         this.list.splice(index, 1);
         localStorage.setItem('list', JSON.stringify(this.list));
       }
-    })
+    });
+  }
+  changeQuality = (id: number, upgrade: boolean) => {
+    this.list.forEach((item, index) => {
+      if (item.id === id) {
+        upgrade ? this.list[index].quality += 1 : this.list[index].quality -= 1
+        localStorage.setItem('list', JSON.stringify(this.list));
+      }
+    });
   }
 }

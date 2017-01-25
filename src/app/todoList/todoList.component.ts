@@ -10,4 +10,5 @@ export class TodoListComponent {
   title = 'todo list';
 
   @Input() deleteItem
+  @Input() changeQuality
 }

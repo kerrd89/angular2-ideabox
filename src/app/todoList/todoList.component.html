@@ -1,6 +1,8 @@
 <ul *ngIf="list.length > 0">
   <li *ngFor="let item of list" id={{item.id}}>
-    <p>{{item.item}}  <span>quality: {{item.quality}}</span><p>
-    <button (click)="deleteItem(item.id)">delete</button>
+    <p>idea: {{item.item}}  <span>quality: {{item.quality}}</span><p>
+      <button (click)="deleteItem(item.id)">delete</button>
+      <button (click)="changeQuality(item.id, true)">upgrade</button>
+      <button (click)="changeQuality(item.id, false)">downgrade</button>
   </li>
 </ul>
