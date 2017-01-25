@@ -22,8 +22,11 @@ export class AppComponent {
   ngOnDestroy() {
     localStorage.setItem('list', JSON.stringify(this.list));
   }
+
+  //CRUD functionality
   addItem = (item: string) => {
-    this.list.push(new Item(Date.now(), item));
+    this.list.push(new Item(Date.now(), item, 1));
+    console.log(this.list)
     localStorage.setItem('list', JSON.stringify(this.list));
   }
   deleteItem = (id: number) => {
