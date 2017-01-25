@@ -1,5 +1,6 @@
-<ul *ngIf="list.length > 2">
+<ul *ngIf="list.length > 0">
   <li *ngFor="let item of list" id={{item.id}}>
     <p>{{item.item}}<p>
+    <button (click)="deleteItem(item.id)">delete</button>
   </li>
 </ul>

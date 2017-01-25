@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'todoForm',
   templateUrl: './todoForm.component.html',
-  inputs: ['addForm'],
 })
 
 export class TodoFormComponent {
   value = '';
-
-  onKey(event:any) {
-   this.value = event.target.value;
+  onSubmit = ($event) => {
+    $event.preventDefault()
+    this.addItem($event.target.value.value)
+    this.value = ''
   }
+  @Input() addItem;
  }
